@@ -1,0 +1,16 @@
+.card {
+  width: 90%;
+  margin: 5rem auto 0 auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.higherIdx {
+  position: absolute;
+  z-index: 20;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.zeroIdx {
+  z-index: 0;
+}
