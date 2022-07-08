@@ -1,0 +1,7 @@
+<header>
+  <img src="../../../assets/logo.png" alt="logo" class="logo" />
+  <isc-navbar *ngIf="!isMobile; else onMobile"></isc-navbar>
+  <ng-template #onMobile>
+    <isc-sidebar></isc-sidebar>
+  </ng-template>
+</header>

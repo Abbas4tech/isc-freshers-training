@@ -1,0 +1,7 @@
+<div *ngIf="!isOpen; else onOpen" (click)="toggleSidebar()">click to open</div>
+<ng-template #onOpen>
+  <isc-backdrop (backdropPressed)="[toggleSidebar()]"></isc-backdrop>
+  <section class="sidebar">
+    <isc-navbar [onSidebar]="true"></isc-navbar>
+  </section>
+</ng-template>
