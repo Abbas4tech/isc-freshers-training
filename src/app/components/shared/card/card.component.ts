@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CardComponent implements OnInit {
   @Input() backdrop!: boolean;
   @Input() maxWidth!: string;
+  @Input() background!: string;
   constructor() {}
 
   ngOnInit(): void {}

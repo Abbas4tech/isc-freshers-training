@@ -1,0 +1,11 @@
+input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+input:focus {
+  outline: none;
+}

@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/header/components/navbar/navbar.component';
 import { SidebarComponent } from './components/header/components/sidebar/sidebar.component';
 import { SharedModule } from './components/shared/shared.module';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { SharedModule } from './components/shared/shared.module';
     HeaderComponent,
     NavbarComponent,
     SidebarComponent,
+    SearchbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],

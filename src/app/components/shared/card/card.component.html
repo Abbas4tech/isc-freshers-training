@@ -1,7 +1,10 @@
 <isc-backdrop *ngIf="backdrop"></isc-backdrop>
 <section
   class="card"
-  [ngStyle]="{ 'max-width': maxWidth }"
+  [ngStyle]="{
+    'max-width': maxWidth,
+    'background-color': background ? background : '#fff'
+  }"
   [ngClass]="{ higherIdx: backdrop, zeroIdx: !backdrop }"
 >
   <ng-content></ng-content>
