@@ -5,6 +5,7 @@ input {
   font-size: 1.3rem;
   border: none;
   border-radius: 0.5rem;
+  font-family: "Poppins";
 }
 input:focus {
   outline: none;

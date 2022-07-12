@@ -7,10 +7,6 @@ const routes: Routes = [
     path: '',
     component: ExploreSchoolComponent,
   },
-  {
-    path: '/:id',
-    // Detailed component will be added
-  },
 ];
 
 @NgModule({
