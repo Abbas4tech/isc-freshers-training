@@ -1,5 +1,7 @@
 <nav [ngClass]="{ onSidebar: onSidebar }">
-  <li>Explore Schools</li>
-  <li>Sign Up ></li>
-  <li>Sign In ></li>
+  <ng-container *ngFor="let link of navLinks">
+    <li>
+      <a [routerLink]="[link.path]">{{ link.name }}</a>
+    </li>
+  </ng-container>
 </nav>

@@ -2,6 +2,6 @@
 <ng-template #onOpen>
   <isc-backdrop (backdropPressed)="[toggleSidebar()]"></isc-backdrop>
   <section class="sidebar">
-    <isc-navbar [onSidebar]="true"></isc-navbar>
+    <isc-navbar [navLinks]="navLinks" [onSidebar]="true"></isc-navbar>
   </section>
 </ng-template>
