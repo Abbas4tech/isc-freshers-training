@@ -80,4 +80,12 @@ export class CommonService {
   getNavLinks() {
     return this.navlinks;
   }
+
+  getUniversityData() {
+    return this.universityData;
+  }
+
+  getUniversityFromId(id: number) {
+    return this.universityData.find((e: University) => e.universityID === id);
+  }
 }
