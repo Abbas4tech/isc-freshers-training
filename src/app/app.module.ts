@@ -7,9 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/header/components/navbar/navbar.component';
 import { SidebarComponent } from './components/header/components/sidebar/sidebar.component';
 import { SharedModule } from './components/shared/shared.module';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
-import { ExploreSchoolComponent } from './pages/explore-schools/explore-schools.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { ExploreSchoolsModule } from './pages/explore-schools/explore-schools.module';
 
 @NgModule({
   declarations: [
@@ -17,11 +16,14 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     HeaderComponent,
     NavbarComponent,
     SidebarComponent,
-    SearchbarComponent,
-    ExploreSchoolComponent,
     NotfoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, SharedModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    ExploreSchoolsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
