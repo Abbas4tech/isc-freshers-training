@@ -1,0 +1,7 @@
+.gridBox {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: end;
+}

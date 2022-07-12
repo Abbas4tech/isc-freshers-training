@@ -6,15 +6,12 @@ import { University } from 'src/app/services/model/common.model';
 @Component({
   selector: 'isc-explore-school',
   templateUrl: './explore-school.component.html',
+  styleUrls: ['./explore-schools.component.css'],
 })
 export class ExploreSchoolComponent implements OnInit {
   universityData!: University[];
 
   constructor(private _commonService: CommonService, private _router: Router) {}
-
-  onDetailedView(id: number) {
-    this._router.navigate(['explore-schools', id]);
-  }
 
   ngOnInit(): void {
     this.universityData = this._commonService.getUniversityData();

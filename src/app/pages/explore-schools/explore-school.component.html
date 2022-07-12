@@ -1,20 +1,9 @@
 <isc-card [background]="'#efefef'" [maxWidth]="'90rem'">
   <isc-searchbar></isc-searchbar>
-  <ng-container *ngFor="let university of universityData">
-    <section (click)="onDetailedView(university.universityID)">
-      <img
-        width="100px"
-        height="100px"
-        [src]="university.logoUrl"
-        [alt]="university.name"
-      />
-      <h1>{{ university.name }}</h1>
-      <h2>
-        {{ university.location.landmark }} {{ university.location.country }}
-      </h2>
-      <p>Isc Ranking : {{ university.iscRanking }}</p>
-      <p>Acceptance Rate : {{ university.AcceptanceRate }}</p>
-    </section>
-  </ng-container>
+  <section class="gridBox">
+    <ng-container *ngFor="let university of universityData">
+      <isc-universityitem [data]="university"></isc-universityitem>
+    </ng-container>
+  </section>
 </isc-card>
 <router-outlet></router-outlet>

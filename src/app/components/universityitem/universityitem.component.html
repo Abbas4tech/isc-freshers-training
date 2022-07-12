@@ -1,0 +1,13 @@
+<section (click)="onDetailedView(data.universityID)">
+  <img width="100px" height="100px" [src]="data.logoUrl" [alt]="data.name" />
+  <div>
+    <h1>{{ data.name }}</h1>
+    <h4>{{ data.location.landmark }} {{ data.location.country }}</h4>
+    <p>
+      Isc Ranking : <span>{{ data.iscRanking }}</span>
+    </p>
+    <p>
+      Acceptance Rate : <span>{{ data.AcceptanceRate }}</span>
+    </p>
+  </div>
+</section>
