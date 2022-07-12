@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExploreSchoolComponent } from './pages/explore-schools/explore-schools.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'explore-schools',
+  },
+  {
+    path: '**',
+    component: NotfoundComponent,
   },
 ];
 

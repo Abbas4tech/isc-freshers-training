@@ -9,6 +9,7 @@ import { SidebarComponent } from './components/header/components/sidebar/sidebar
 import { SharedModule } from './components/shared/shared.module';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { ExploreSchoolComponent } from './pages/explore-schools/explore-schools.component';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ExploreSchoolComponent } from './pages/explore-schools/explore-schools.
     SidebarComponent,
     SearchbarComponent,
     ExploreSchoolComponent,
+    NotfoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, SharedModule],
   providers: [],
