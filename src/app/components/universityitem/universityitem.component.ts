@@ -9,7 +9,8 @@ import { University } from 'src/app/services/model/common.model';
 })
 export class UniversityitemComponent implements OnInit {
   constructor(private _router: Router) {}
-  @Input()data!: University
+  @Input() data!: University;
+  @Input() isViewOnly!: boolean;
   onDetailedView(id: number) {
     this._router.navigate(['explore-schools', id]);
   }

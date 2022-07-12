@@ -5,6 +5,10 @@ section {
   padding: 1rem 2rem;
   gap: 1rem;
 }
+section img {
+  width: 7.5rem;
+  object-fit: cover;
+}
 h1,
 h4,
 p {
@@ -21,4 +25,12 @@ p {
 }
 span {
   color: rgb(76, 76, 76);
+}
+@media only screen and (max-width: 600px) {
+  section {
+    flex-direction: column;
+  }
+  section img {
+    height: 2.5rem;
+  }
 }

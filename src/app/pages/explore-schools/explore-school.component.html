@@ -2,7 +2,10 @@
   <isc-searchbar></isc-searchbar>
   <section class="gridBox">
     <ng-container *ngFor="let university of universityData">
-      <isc-universityitem [data]="university"></isc-universityitem>
+      <isc-universityitem
+        [isViewOnly]="false"
+        [data]="university"
+      ></isc-universityitem>
     </ng-container>
   </section>
 </isc-card>
