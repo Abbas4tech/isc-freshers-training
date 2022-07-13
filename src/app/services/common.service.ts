@@ -22,7 +22,7 @@ export class CommonService {
 
   universityData: University[] = [
     {
-      universityID: Math.random(),
+      universityID: 1,
       name: 'Massachusettes Institute Of Technology',
       logoUrl: '../../assets/logo.png',
       location: {
@@ -35,7 +35,7 @@ export class CommonService {
         'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.',
     },
     {
-      universityID: Math.random(),
+      universityID: 2,
       name: 'Massachusettes Institute Of Technology',
       logoUrl: '../../assets/logo.png',
       location: {
@@ -48,7 +48,7 @@ export class CommonService {
         'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.',
     },
     {
-      universityID: Math.random(),
+      universityID: 3,
       name: 'Massachusettes Institute Of Technology',
       logoUrl: '../../assets/logo.png',
       location: {
@@ -61,7 +61,7 @@ export class CommonService {
         'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.',
     },
     {
-      universityID: Math.random(),
+      universityID: 4,
       name: 'Massachusettes Institute Of Technology',
       logoUrl: '../../assets/logo.png',
       location: {
@@ -86,6 +86,7 @@ export class CommonService {
   }
 
   getUniversityFromId(id: number) {
+    console.log(this.universityData);
     return this.universityData.find((e: University) => e.universityID === id);
   }
 }

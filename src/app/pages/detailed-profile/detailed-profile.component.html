@@ -1,1 +1,18 @@
-<section></section>
+<header>
+  <isc-universityitem
+    [isViewOnly]="true"
+    [data]="university"
+  ></isc-universityitem>
+</header>
+<isc-card [maxWidth]="'90rem'">
+  <article class="container">
+    <section class="first">
+      <h1>About</h1>
+      {{ university?.description }}
+    </section>
+    <section class="second">
+      <h1>About</h1>
+      {{ university?.description }}
+    </section>
+  </article>
+</isc-card>
