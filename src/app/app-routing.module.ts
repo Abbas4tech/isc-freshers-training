@@ -1,6 +1,8 @@
+import { ExploreSchoolComponent } from './pages/explore-schools/explore-schools.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { DetailedProfileComponent } from './pages/detailed-profile/detailed-profile.component';
 
 const routes: Routes = [
   {
