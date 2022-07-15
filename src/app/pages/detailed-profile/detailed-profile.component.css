@@ -2,6 +2,7 @@ header {
   display: flex;
   border-top: 1px solid rgb(204, 204, 204);
   background: white;
+  border-radius: 0.5rem;
   padding: 1rem 2rem;
 }
 .container {
@@ -10,12 +11,15 @@ header {
   grid-template: repeat(3, 1fr) / 2fr 1fr;
   grid-column-gap: 3rem;
 }
-.description {
-  grid-area: 1 / 1 / 2 / 2;
+.description,
+.second {
   background-color: white;
   border-radius: 1rem;
   color: rgb(50, 50, 50);
   padding: 1rem;
+}
+.description {
+  grid-area: 1 / 1 / 2 / 2;
 }
 .description h1 {
   font-size: 1.3rem;
