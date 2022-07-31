@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NavLink, University } from './model/common.model';
+import { Filter, NavLink, University } from './model/common.model';
 
 @Injectable({
   providedIn: 'root',
@@ -75,6 +75,36 @@ export class CommonService {
     },
   ];
 
+  filterData: Filter[] = [
+    {
+      name: 'Degree',
+      type: 'checkbox',
+      options: [
+        'Masters',
+        'Bachelors',
+        'Doctorate',
+        'Associate',
+        'Professional Certificate',
+        'Diploma',
+        'Post Graduate Diploma',
+        'Undergraduate Certificate',
+        'Graduate Certificate',
+        'Post Graduate Certificate',
+      ],
+    },
+    {
+      name: 'Tution Fee',
+      type: 'radio',
+      options: [
+        '0,000 USD/year or less',
+        '50,000 USD/year or less',
+        '70,000 USD/year or less',
+        '90,000 USD/year or less',
+        'More than 90,000 USD/year',
+      ],
+    },
+  ];
+
   constructor() {}
 
   getNavLinks() {
@@ -88,5 +118,9 @@ export class CommonService {
   getUniversityFromId(id: number) {
     console.log(this.universityData);
     return this.universityData.find((e: University) => e.universityID === id);
+  }
+
+  getFiltersData() {
+    return this.filterData;
   }
 }

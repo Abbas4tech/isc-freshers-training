@@ -1,0 +1,21 @@
+<article class="filterbox">
+  <h3 class="main_heading">Filters</h3>
+  <ng-container *ngFor="let item of filters">
+    <section class="filterItem">
+      <p class="filter_name">{{ item.name }}</p>
+      <input class="filter_search" type="search" />
+      <section class="filter_options">
+        <ng-container *ngFor="let option of item.options">
+          <label [for]="item.name"
+            ><input
+              (change)="onSelect(option)"
+              [type]="item.type"
+              [value]="option"
+              [name]="item.name"
+            />{{ option }}</label
+          >
+        </ng-container>
+      </section>
+    </section>
+  </ng-container>
+</article>

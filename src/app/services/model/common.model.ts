@@ -15,3 +15,11 @@ export type University = {
   AcceptanceRate: string;
   description: string;
 };
+
+export type FilterType = 'radio' | 'checkbox';
+
+export type Filter = {
+  name: string;
+  type: FilterType;
+  options: string[];
+};

@@ -1,11 +1,16 @@
 <isc-card [background]="'#efefef'" [maxWidth]="'90rem'">
   <isc-searchbar></isc-searchbar>
-  <section class="gridBox">
-    <ng-container *ngFor="let university of universityData">
-      <isc-universityitem
-        [isViewOnly]="false"
-        [data]="university"
-      ></isc-universityitem>
-    </ng-container>
-  </section>
+  <main>
+    <section class="box_1">
+      <isc-filter></isc-filter>
+    </section>
+    <section class="gridBox">
+      <ng-container *ngFor="let university of universityData">
+        <isc-universityitem
+          [isViewOnly]="false"
+          [data]="university"
+        ></isc-universityitem>
+      </ng-container>
+    </section>
+  </main>
 </isc-card>

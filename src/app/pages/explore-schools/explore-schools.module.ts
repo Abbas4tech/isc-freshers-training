@@ -6,6 +6,7 @@ import { UniversityitemComponent } from 'src/app/pages/explore-schools/component
 import { DetailedProfileComponent } from '../detailed-profile/detailed-profile.component';
 import { ExploreSchoolsRoutingModule } from './explore-schools-routing.module';
 import { ExploreSchoolComponent } from './explore-schools.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ExploreSchoolComponent } from './explore-schools.component';
     SearchbarComponent,
     DetailedProfileComponent,
     UniversityitemComponent,
+    FilterComponent,
   ],
   imports: [CommonModule, SharedModule, ExploreSchoolsRoutingModule],
   exports: [
