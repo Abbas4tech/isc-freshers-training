@@ -35,5 +35,15 @@ input[type="radio"] {
 .filter_options {
   height: 8rem;
   width: 100%;
-  overflow: scroll;
+  overflow-y: auto;
+}
+.filter_options::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.filter_options::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.filter_options::-webkit-scrollbar-thumb {
+  background: rgb(192, 191, 191);
+  border-radius: 10px;
 }
