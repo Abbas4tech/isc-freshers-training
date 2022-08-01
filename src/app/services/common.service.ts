@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Filter, NavLink, University } from './model/common.model';
+import { Filter, NavLink, Universities } from './model/common.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -20,60 +21,62 @@ export class CommonService {
     },
   ];
 
-  universityData: University[] = [
-    {
-      universityID: 1,
-      name: 'Massachusettes Institute Of Technology',
-      logoUrl: '../../assets/logo.png',
-      location: {
-        landmark: 'Cambridge, Massachusettes',
-        country: 'United States Of America',
-      },
-      iscRanking: 4,
-      AcceptanceRate: '20%',
-      description:
-        'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
-    },
-    {
-      universityID: 2,
-      name: 'Massachusettes Institute Of Technology',
-      logoUrl: '../../assets/logo.png',
-      location: {
-        landmark: 'Cambridge, Massachusettes',
-        country: 'United States Of America',
-      },
-      iscRanking: 2,
-      AcceptanceRate: '40%',
-      description:
-        'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
-    },
-    {
-      universityID: 3,
-      name: 'Massachusettes Institute Of Technology',
-      logoUrl: '../../assets/logo.png',
-      location: {
-        landmark: 'Cambridge, Massachusettes',
-        country: 'United States Of America',
-      },
-      iscRanking: 5,
-      AcceptanceRate: '80%',
-      description:
-        'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
-    },
-    {
-      universityID: 4,
-      name: 'Massachusettes Institute Of Technology',
-      logoUrl: '../../assets/logo.png',
-      location: {
-        landmark: 'Cambridge, Massachusettes',
-        country: 'United States Of America',
-      },
-      iscRanking: 3,
-      AcceptanceRate: '60%',
-      description:
-        'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
-    },
-  ];
+  // universityData: University[] = [
+  //   {
+  //     _id: '1',
+  //     name: 'Massachusettes Institute Of Technology',
+  //     logo: '../../assets/logo.png',
+  //     address: {
+  //       city: 'Cambridge, Massachusettes',
+
+  //       state: 'Phalna',
+  //       region: 'United States Of America',
+  //     },
+  //     iscRanking: 4,
+  //     AcceptanceRate: '20%',
+  //     description:
+  //       'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
+  //   },
+  //   {
+  //     _id: '2',
+  //     name: 'Massachusettes Institute Of Technology',
+  //     logoUrl: '../../assets/logo.png',
+  //     location: {
+  //       landmark: 'Cambridge, Massachusettes',
+  //       country: 'United States Of America',
+  //     },
+  //     iscRanking: 2,
+  //     AcceptanceRate: '40%',
+  //     description:
+  //       'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
+  //   },
+  //   {
+  //     _id: '3',
+  //     name: 'Massachusettes Institute Of Technology',
+  //     logoUrl: '../../assets/logo.png',
+  //     location: {
+  //       landmark: 'Cambridge, Massachusettes',
+  //       country: 'United States Of America',
+  //     },
+  //     iscRanking: 5,
+  //     AcceptanceRate: '80%',
+  //     description:
+  //       'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
+  //   },
+  //   {
+  //     _id: '4',
+  //     name: 'Massachusettes Institute Of Technology',
+  //     logo: '../../assets/logo.png',
+  //     location: {
+  //       landmark: 'Cambridge, Massachusettes',
+  //       country: 'United States Of America',
+  //     },
+  //     iscRanking: 3,
+  //     AcceptanceRate: '60%',
+  //     description:
+  //       'Massachusettes Institute Of Technology has the mission to advance knowledge and educate students in science,technology and other areas that will best serve the nation and the world. The university moulds the students to be productive, imaginative and welcome all the talented students regardless of where they came from.led it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with de',
+  //   },
+  // ];
 
   filterData: Filter[] = [
     {
@@ -105,19 +108,19 @@ export class CommonService {
     },
   ];
 
-  constructor() {}
+  constructor(private _http: HttpClient) {}
 
   getNavLinks() {
     return this.navlinks;
   }
 
   getUniversityData() {
-    return this.universityData;
+    return this._http.get<Universities>('http://localhost:3000/');
   }
 
-  getUniversityFromId(id: number) {
-    console.log(this.universityData);
-    return this.universityData.find((e: University) => e.universityID === id);
+  getUniversityFromId(id: string) {
+    console.log(id);
+    return this._http.get<Universities>(`http://localhost:3000/${id}`);
   }
 
   getFiltersData() {

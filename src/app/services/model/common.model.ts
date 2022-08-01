@@ -3,18 +3,32 @@ export type NavLink = {
   path?: string;
 };
 
-export type University = {
-  universityID: number;
+// export type University = {
+//   _id: string;
+//   name: string;
+//   logoUrl: string;
+//   location: {
+//     landmark: string;
+//     country: string;
+//   };
+//   iscRanking: number;
+//   AcceptanceRate: string;
+//   description: string;
+// };
+
+export type UniversityItem = {
+  _id: string;
   name: string;
-  logoUrl: string;
-  location: {
-    landmark: string;
-    country: string;
+  logo: string;
+  address: {
+    city: string;
+    state: string;
+    region: string;
   };
-  iscRanking: number;
-  AcceptanceRate: string;
   description: string;
 };
+
+export type Universities = UniversityItem[];
 
 export type FilterType = 'radio' | 'checkbox';
 

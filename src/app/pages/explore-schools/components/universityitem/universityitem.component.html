@@ -1,16 +1,13 @@
 <section
   [ngStyle]="{ cursor: !isViewOnly ? 'pointer' : 'default' }"
-  (click)="!isViewOnly ? onDetailedView(data.universityID) : null"
+  (click)="!isViewOnly ? onDetailedView(data._id) : null"
 >
-  <img [src]="data.logoUrl" [alt]="data.name" />
+  <img [src]="data.logo" [alt]="data.name" />
   <div>
     <h1>{{ data.name }}</h1>
-    <h4>{{ data.location.landmark }} {{ data.location.country }}</h4>
-    <p>
-      Isc Ranking : <span>{{ data.iscRanking }}</span>
-    </p>
-    <p>
-      Acceptance Rate : <span>{{ data.AcceptanceRate }}</span>
-    </p>
+    <h4>
+      {{ data.address.city }} {{ data.address.state }},
+      {{ data.address.region }}
+    </h4>
   </div>
 </section>

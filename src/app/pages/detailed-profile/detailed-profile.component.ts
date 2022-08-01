@@ -1,7 +1,7 @@
 import { CommonService } from 'src/app/services/common.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { University } from 'src/app/services/model/common.model';
+import { UniversityItem } from 'src/app/services/model/common.model';
 
 @Component({
   selector: 'isc-detailed-profile',
@@ -9,7 +9,7 @@ import { University } from 'src/app/services/model/common.model';
   styleUrls: ['./detailed-profile.component.css'],
 })
 export class DetailedProfileComponent implements OnInit {
-  university!: University | undefined;
+  university!: UniversityItem | undefined;
 
   constructor(
     private _router: Router,
@@ -18,7 +18,9 @@ export class DetailedProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = +this._activeRoute.snapshot.params['id'];
-    this.university = this._commonService.getUniversityFromId(id);
+    const id = this._activeRoute.snapshot.params['id'];
+    this._commonService.getUniversityFromId(id).subscribe(([data]) => {
+      this.university = data;
+    });
   }
 }
