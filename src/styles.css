@@ -11,3 +11,34 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #efefef;
 }
+
+/* -- Reusable Classes -- */
+
+.scroller {
+  overflow-y: auto;
+  cursor: all-scroll;
+}
+.scroller::-webkit-scrollbar {
+  width: 0.5rem;
+}
+.scroller::-webkit-scrollbar-track {
+  background: #efefef;
+  border-radius: 10px;
+}
+.scroller::-webkit-scrollbar-thumb {
+  background: rgb(192, 191, 191);
+  border-radius: 10px;
+}
+
+/*--- Hideen Scroller --- */
+
+.scroller-hidden {
+  overflow-y: auto;
+}
+.scroller-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scroller-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

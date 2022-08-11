@@ -4,7 +4,7 @@
     <section class="filterItem">
       <p class="filter_name">{{ item.name }}</p>
       <input class="filter_search" type="search" />
-      <section class="filter_options">
+      <section class="filter_options | scroller">
         <ng-container *ngFor="let option of item.options">
           <label [for]="item.name"
             ><input
