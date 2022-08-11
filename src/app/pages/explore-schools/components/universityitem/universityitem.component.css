@@ -7,7 +7,7 @@ section {
 }
 section img {
   width: 7.5rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 h1,
 h4,
@@ -26,7 +26,7 @@ p {
 span {
   color: rgb(76, 76, 76);
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   section {
     flex-direction: column;
   }
