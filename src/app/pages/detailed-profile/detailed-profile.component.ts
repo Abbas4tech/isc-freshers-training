@@ -9,7 +9,7 @@ import { UniversityItem } from 'src/app/services/model/common.model';
   styleUrls: ['./detailed-profile.component.css'],
 })
 export class DetailedProfileComponent implements OnInit {
-  university!: UniversityItem | undefined;
+  university!: UniversityItem;
 
   constructor(
     private _router: Router,
@@ -18,8 +18,7 @@ export class DetailedProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = this._activeRoute.snapshot.params['id'];
-    this._commonService.getUniversityFromId(id).subscribe(([data]) => {
+    this._activeRoute.data.subscribe(({ detailedData: [data] }) => {
       this.university = data;
     });
   }

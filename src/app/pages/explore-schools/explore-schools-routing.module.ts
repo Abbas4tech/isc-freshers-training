@@ -2,6 +2,7 @@ import { DetailedProfileComponent } from './../detailed-profile/detailed-profile
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExploreSchoolComponent } from './explore-schools.component';
+import { DetailedpageResolver } from 'src/app/resolver/detailedpage.resolver';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
   {
     path: ':id',
     component: DetailedProfileComponent,
+    resolve: {
+      detailedData: DetailedpageResolver,
+    },
   },
 ];
 
