@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Filter, NavLink, Universities } from './model/common.model';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -111,16 +112,17 @@ export class CommonService {
   constructor(private _http: HttpClient) {}
 
   getNavLinks() {
+    console.log(environment.production, environment.backend_url);
     return this.navlinks;
   }
 
   getUniversityData() {
-    return this._http.get<Universities>('http://localhost:3000/');
+    return this._http.get<Universities>(`${environment.backend_url}/`);
   }
 
   getUniversityFromId(id: string) {
     console.log(id);
-    return this._http.get<Universities>(`http://localhost:3000/${id}`);
+    return this._http.get<Universities>(`${environment.backend_url}/${id}`);
   }
 
   getFiltersData() {
