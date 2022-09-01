@@ -1,3 +1,4 @@
+import { UniversityItem } from 'src/app/services/model/common.model';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class UniversityitemComponent implements OnInit {
   constructor(private _router: Router) {}
-  @Input() data!: any;
+  @Input() data!: UniversityItem;
   @Input() isViewOnly!: boolean;
   onDetailedView(id: string) {
     this._router.navigate(['explore-schools', id]);

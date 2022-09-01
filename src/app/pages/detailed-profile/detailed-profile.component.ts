@@ -2,6 +2,7 @@ import { CommonService } from 'src/app/services/common.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { UniversityItem } from 'src/app/services/model/common.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'isc-detailed-profile',
@@ -14,7 +15,8 @@ export class DetailedProfileComponent implements OnInit {
   constructor(
     private _router: Router,
     private _activeRoute: ActivatedRoute,
-    private _commonService: CommonService
+    private _commonService: CommonService,
+    public _location: Location
   ) {}
 
   ngOnInit(): void {
